@@ -16,7 +16,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: var(--light-color);
+    background: linear-gradient(45deg, rgba(106, 13, 173, 0.1), rgba(255, 105, 180, 0.1)); /* Lighter gradient */
     color: var(--text-color);
     scroll-behavior: smooth;
 }
@@ -32,7 +32,7 @@ body {
 
 .portfolio-title-section h1 {
     font-family: 'Caveat Brush', cursive;
-    font-size: 4em;
+    font-size: 5em;
     margin: 0;
     letter-spacing: 5px;
     text-transform: uppercase;
