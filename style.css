@@ -113,12 +113,12 @@ h2::after {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    margin-right: 20px;
     border: 5px solid #007bff;
     box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .profile-header div p {
@@ -159,11 +159,24 @@ a:hover {
 }
 
 /* Estilos de la sección de Proyectos */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+
+@media (max-width: 768px) {
+    .carousel-slide {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel-slide > .project-item {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        margin-right: 20px; /* Espacio entre proyectos */
+    }
+
+    .carousel-slide::-webkit-scrollbar {
+        display: none; /* Ocultar scrollbar para una mejor estética */
+    }
 }
 
 .project-item {
@@ -226,7 +239,7 @@ a:hover {
 .carousel-button.next {
     right: 10px;
 }
-}
+
 
 /* Estilos de la sección de Experiencia */
 .experience-item h3 {
@@ -413,11 +426,46 @@ form button:hover {
 }
 .carousel-slide {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px; /* Opcional: para espaciar los elementos */
+    display: flex;
+    overflow-x: hidden; /* Hide scrollbar */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+
+  .carousel-slide > .project-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
     box-sizing: border-box;
-    position: relative; /* Necesario si los botones usan position: absolute */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    margin-right: 15px; /* Space between items */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .carousel-slide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .carousel-slide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  @media (min-width: 769px) {
+    .carousel-slide {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        overflow-x: hidden;
+    }
+    .carousel-slide > .project-item {
+        flex: unset;
+        margin-right: 0;
+    }
   }
   
   .project-item {
