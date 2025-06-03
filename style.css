@@ -379,97 +379,86 @@ form button:hover {
 /* Estilos del carrusel */
 /* Carousel Styles */
 .carousel-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px; /* Adjust as needed */
-    margin: 20px auto;
-    overflow: hidden;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
-
 .carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide .project-item {
-    min-width: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px; /* Opcional: para espaciar los elementos */
     box-sizing: border-box;
-    padding: 20px;
+    position: relative; /* Necesario si los botones usan position: absolute */
+  }
+  
+  .project-item {
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     text-align: center;
-}
-
-.carousel-button {
+  }
+  
+  .project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .project-button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .project-button:hover {
+    background: #0056b3;
+  }
+  
+  .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
+    padding: 10px;
     border: none;
-    padding: 10px 15px;
     cursor: pointer;
-    z-index: 100;
-    font-size: 18px;
-}
-
-.carousel-button.prev {
+    z-index: 1;
+  }
+  
+  .prev {
     left: 10px;
-}
-
-.carousel-button.next {
+  }
+  
+  .next {
     right: 10px;
-}
-
-.carousel-dots {
+  }
+  
+  .carousel-dots {
     text-align: center;
-    padding: 10px 0;
-}
-
-.dot {
-    height: 10px;
+    padding: 20px 0;
+  }
+  
+  .dot {
+    display: inline-block;
     width: 10px;
-    margin: 0 5px;
-    background-color: #bbb;
+    height: 10px;
+    background: #ccc;
     border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+    margin: 0 5px;
     cursor: pointer;
-}
-
-.dot.active {
-    background-color: #717171;
-}
-
-.project-item img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px;
-    border-radius: 8px;
-}
-
-.project-item h3 {
-    margin-top: 0;
-    color: #333;
-}
-
-.project-item p {
-    color: #666;
-    line-height: 1.6;
-}
-
-.project-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
-}
-
-.project-button:hover {
-    background-color: #0056b3;
-}
+  }
+  
+  .dot.active {
+    background: #333;
+  }
+  

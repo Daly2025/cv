@@ -1,45 +1,43 @@
 const carouselSlide = document.querySelector('.carousel-slide');
 const carouselButtons = document.querySelectorAll('.carousel-button');
-const projectItems = document.querySelectorAll('.carousel-slide .project-item');
+const projectItems = document.querySelectorAll('.project-item');
+const dotsContainer = document.querySelector('.carousel-dots');
 
 let slideIndex = 0;
 const totalProjects = projectItems.length;
 
+// Crear dots iniciales
+projectItems.forEach((_, index) => {
+  const dot = document.createElement('span');
+  dot.className = 'dot' + (index === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goToSlide(index));
+  dotsContainer.appendChild(dot);
+});
+
 carouselButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        if (button.classList.contains('prev')) {
-            slideIndex = (slideIndex - 1 + totalProjects) % totalProjects;
-        } else {
-            slideIndex = (slideIndex + 1) % totalProjects;
-        }
-        updateCarousel();
-    });
+  button.addEventListener('click', () => {
+    slideIndex = button.classList.contains('prev') 
+      ? (slideIndex - 1 + totalProjects) % totalProjects
+      : (slideIndex + 1) % totalProjects;
+    updateCarousel();
+  });
 });
 
 function updateCarousel() {
-    const offset = -slideIndex * 100;
-    carouselSlide.style.transform = `translateX(${offset}%)`;
+  carouselSlide.style.transform = `translateX(-${slideIndex * 25}%)`;
+  updateDots();
 }
-
-// Initial carousel update
-updateCarousel();
 
 function updateDots() {
-  const dots = document.querySelectorAll('.dot');
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[slideIndex].classList.add('active');
+  document.querySelectorAll('.dot').forEach((dot, index) => {
+    dot.classList.toggle('active', index === slideIndex);
+  });
 }
 
-// Crear dots iniciales
-const dotsContainer = document.querySelector('.carousel-dots');
-for (let i = 0; i < totalItems; i++) {
-  const dot = document.createElement('span');
-  dot.classList.add('dot');
-  if (i === 0) dot.classList.add('active');
-  dot.addEventListener('click', () => {
-    slideIndex = i;
-    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-    updateDots();
-  });
-  dotsContainer.appendChild(dot);
+function goToSlide(index) {
+  slideIndex = index;
+  updateCarousel();
 }
+
+// Inicializar carrusel
+updateCarousel();
