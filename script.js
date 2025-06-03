@@ -16,6 +16,9 @@ projectItems.forEach((_, index) => {
 
 
 
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+
 function updateCarousel() {
   carouselSlide.style.transform = `translateX(-${slideIndex * 25}%)`;
   updateDots();
@@ -31,6 +34,20 @@ function goToSlide(index) {
   slideIndex = index;
   updateCarousel();
 }
+
+function nextSlide() {
+  slideIndex = (slideIndex + 1) % totalProjects;
+  updateCarousel();
+}
+
+function prevSlide() {
+  slideIndex = (slideIndex - 1 + totalProjects) % totalProjects;
+  updateCarousel();
+}
+
+// Event Listeners para los botones
+prevButton.addEventListener('click', prevSlide);
+nextButton.addEventListener('click', nextSlide);
 
 // Inicializar carrusel
 updateCarousel();
