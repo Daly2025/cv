@@ -1,5 +1,5 @@
 const carouselSlide = document.querySelector('.carousel-slide');
-const carouselButtons = document.querySelectorAll('.carousel-button');
+
 const projectItems = document.querySelectorAll('.project-item');
 const dotsContainer = document.querySelector('.carousel-dots');
 
@@ -14,14 +14,7 @@ projectItems.forEach((_, index) => {
   dotsContainer.appendChild(dot);
 });
 
-carouselButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    slideIndex = button.classList.contains('prev') 
-      ? (slideIndex - 1 + totalProjects) % totalProjects
-      : (slideIndex + 1) % totalProjects;
-    updateCarousel();
-  });
-});
+
 
 function updateCarousel() {
   carouselSlide.style.transform = `translateX(-${slideIndex * 25}%)`;
