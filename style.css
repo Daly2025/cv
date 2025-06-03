@@ -160,23 +160,21 @@ a:hover {
 
 /* Estilos de la sección de Proyectos */
 
-@media (max-width: 768px) {
-    .carousel-slide {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-    }
+.carousel-slide {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
 
-    .carousel-slide > .project-item {
-        flex: 0 0 100%;
-        scroll-snap-align: start;
-        margin-right: 20px; /* Espacio entre proyectos */
-    }
+.carousel-slide > .project-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    margin-right: 0; /* Ensure no extra space between projects */
+}
 
-    .carousel-slide::-webkit-scrollbar {
-        display: none; /* Ocultar scrollbar para una mejor estética */
-    }
+.carousel-slide::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar para una mejor estética */
 }
 
 .project-item {
@@ -455,18 +453,7 @@ form button:hover {
     scrollbar-width: none;  /* Firefox */
   }
 
-  @media (min-width: 769px) {
-    .carousel-slide {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        overflow-x: hidden;
-    }
-    .carousel-slide > .project-item {
-        flex: unset;
-        margin-right: 0;
-    }
-  }
+
   
   .project-item {
     padding: 15px;

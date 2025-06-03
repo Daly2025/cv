@@ -20,7 +20,7 @@ const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
 
 function updateCarousel() {
-  carouselSlide.style.transform = `translateX(-${slideIndex * 25}%)`;
+  carouselSlide.style.transform = `translateX(-${slideIndex * 100}%)`;
   updateDots();
 }
 
