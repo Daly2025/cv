@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
 :root {
     --primary-color: #6a0dad;
     --secondary-color: #ff69b4;
@@ -29,6 +31,7 @@ body {
 }
 
 .portfolio-title-section h1 {
+    font-family: 'Caveat Brush', cursive;
     font-size: 4em;
     margin: 0;
     letter-spacing: 5px;
