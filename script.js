@@ -1,34 +1,37 @@
+// Funcionalidad del carrusel
 let slideIndex = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
+const slides = document.querySelector('.carousel-slide');
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
 
-function showSlides() {
-    slides.forEach((slide, index) => {
-        slide.style.display = (index === slideIndex) ? 'block' : 'none';
-    });
-}
-
-function plusSlides(n) {
-    slideIndex += n;
-    if (slideIndex >= slides.length) {
-        slideIndex = 0;
-    }
-    if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
-    }
-    showSlides();
-}
-
-// Event Listeners
-if (prevButton) {
-    prevButton.addEventListener('click', () => plusSlides(-1));
-}
-
-if (nextButton) {
-    nextButton.addEventListener('click', () => plusSlides(1));
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    showSlides();
+document.querySelector('.prev').addEventListener('click', () => {
+  slideIndex = (slideIndex > 0) ? slideIndex - 1 : totalItems - 1;
+  slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+  updateDots();
 });
+
+document.querySelector('.next').addEventListener('click', () => {
+  slideIndex = (slideIndex < totalItems - 1) ? slideIndex + 1 : 0;
+  slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+  updateDots();
+});
+
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[slideIndex].classList.add('active');
+}
+
+// Crear dots iniciales
+const dotsContainer = document.querySelector('.carousel-dots');
+for (let i = 0; i < totalItems; i++) {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if (i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => {
+    slideIndex = i;
+    slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    updateDots();
+  });
+  dotsContainer.appendChild(dot);
+}
