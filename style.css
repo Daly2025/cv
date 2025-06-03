@@ -162,9 +162,15 @@ a:hover {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr; /* Default to single column for mobile */
     gap: 20px;
     padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for larger screens */
+    }
 }
 
 .project-item {
