@@ -1,20 +1,28 @@
-// Funcionalidad del carrusel
+const carouselSlide = document.querySelector('.carousel-slide');
+const carouselButtons = document.querySelectorAll('.carousel-button');
+const projectItems = document.querySelectorAll('.carousel-slide .project-item');
+
 let slideIndex = 0;
-const slides = document.querySelector('.carousel-slide');
-const items = document.querySelectorAll('.carousel-item');
-const totalItems = items.length;
+const totalProjects = projectItems.length;
 
-document.querySelector('.prev').addEventListener('click', () => {
-  slideIndex = (slideIndex > 0) ? slideIndex - 1 : totalItems - 1;
-  slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-  updateDots();
+carouselButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        if (button.classList.contains('prev')) {
+            slideIndex = (slideIndex - 1 + totalProjects) % totalProjects;
+        } else {
+            slideIndex = (slideIndex + 1) % totalProjects;
+        }
+        updateCarousel();
+    });
 });
 
-document.querySelector('.next').addEventListener('click', () => {
-  slideIndex = (slideIndex < totalItems - 1) ? slideIndex + 1 : 0;
-  slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-  updateDots();
-});
+function updateCarousel() {
+    const offset = -slideIndex * 100;
+    carouselSlide.style.transform = `translateX(${offset}%)`;
+}
+
+// Initial carousel update
+updateCarousel();
 
 function updateDots() {
   const dots = document.querySelectorAll('.dot');
