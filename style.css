@@ -14,8 +14,11 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: var(--light-color);
-    color: var(--text-color);
+    background: url('stylos.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: var(--light-color);
+    background-color: var(--light-color);
+     color: var(--text-color);
     scroll-behavior: smooth;
 }
 
@@ -103,7 +106,8 @@ h2::after {
 
 .profile-header div p {
     font-size: 1.1em;
-    color: var(--text-color);
+    background-color: var(--light-color);
+     color: var(--text-color);
 }
 
 ul {
@@ -147,6 +151,7 @@ a:hover {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
     background-color: #f9f9f9;
     padding: 20px;
 }
@@ -156,6 +161,7 @@ a:hover {
     width: 100%;
     text-align: center;
     padding: 30px;
+
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
@@ -188,7 +194,8 @@ a:hover {
 }
 
 .carousel-slide p {
-    color: var(--text-color);
+    background-color: var(--light-color);
+     color: var(--text-color);
     font-size: 1.1em;
     line-height: 1.5;
     margin-bottom: 20px;
@@ -287,6 +294,7 @@ form button:hover {
     background-color: var(--primary-color);
     color: var(--text-color-light);
     text-align: center;
+    background-color: #f9f9f9;
     padding: 20px;
     margin-top: 40px;
     border-top: 1px solid var(--border-color);
