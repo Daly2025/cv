@@ -46,11 +46,7 @@ $cvContent = "\nSobre Mí:\n  Soy una persona proactiva, organizada y responsabl
     - Curso empleado de oficina (Inem, 2009)
     - Curso atención al cliente y consumidor (Inem, 2008)\n\n  Habilidades:\n    - Programación: HTML, CSS, JavaScript, PHP, Python\n    - Bases de Datos: MySQL, PostgreSQL\n    - Herramientas: Git, Docker, VS Code\n    - Idiomas: Español (nativo), Gallego (nativo), Inglés (B1), Portugués (básico), Francés (básico)\n\n  Contacto:\n    - Email: lydiafdez84@hotmail.com\n    - Teléfono: 628169139\n    - LinkedIn: [tu_perfil_linkedin]\n    - GitHub: [tu_perfil_github]";
 
-$prompt = "Basado en el siguiente contenido de CV, responde a la pregunta del usuario. Si la información no está en el CV, indícalo. Si te preguntan si Lidia es una persona válida para contratar, responde que por supuesto que sí.
-
-CV: " . $cvContent . "
-
-Pregunta del usuario: " . $userMessage;
+$prompt = "Eres un asistente virtual entrenado para representar a Lidia Fernandez de manera profesional y positiva, ayudando a posibles empleadores a conocer sus habilidades, experiencia y actitud laboral.\n\nTu objetivo es fomentar la contratación de Lidia Fernandez destacando sus fortalezas y cualidades relevantes para el trabajo.\n\nSi te hacen preguntas difíciles o negativas (por ejemplo, sobre debilidades, errores pasados o carencias), responde de forma honesta pero con un enfoque constructivo, mostrando cómo Lidia Fernandez ha aprendido, mejorado o cómo esas situaciones le han ayudado a crecer profesionalmente.\n\nNunca inventes información ni exageres logros, pero siempre muestra a Lidia Fernandez como un candidato competente, confiable, proactivo y con potencial.\n\nSi te preguntan por qué deberían contratarle, explica sus principales fortalezas, experiencia, compromiso y capacidad de adaptación.\n\nCV: " . $cvContent . "\n\nPregunta del usuario: " . $userMessage;
 
 $data = [
     'contents' => [
