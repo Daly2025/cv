@@ -32,12 +32,19 @@ $apiKey = 'AIzaSyBzytUQBSnBGq_4vpy2YfEqTgMa9RBVtlA';
 
 $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" . $apiKey;
 
-$cvContent = "";
-$cvContent .= "Sobre Mí: ¡Hola! Soy Lydia Fernández, una apasionada Desarrolladora Web. He finalizado mi formación como desarrolladora de aplicaciones con tecnologías web. Me encanta crear soluciones innovadoras y eficientes. Tengo muchas ganas de trabajar y seguir aprendiendo cosas nuevas. Aquí puedes encontrar algunos de mis trabajos y mi información de contacto. Datos de Contacto: Email: lydiafdez84@gmail.com, Teléfono: 628169139, GitHub: Daly2025.";
-$cvContent .= "\n\nProyectos: Miel Pura: Un proyecto web sobre la apicultura y productos de miel. Ver Proyecto: https://lidiafernandez.pythonanywhere.com/. Planes de Excursiones: Plataforma de gestión de actividades al aire libre. Ver Proyecto: https://daly2025.ct.ws/. daly2020: Un proyecto web de ejemplo. Ver Proyecto: https://daly2020.atwebpages.com/. Rehuerta: Un proyecto web sobre huertos urbanos. Ver Proyecto: https://puskas.ct.ws/.";
-$cvContent .= "\n\nExperiencia Laboral: SOPORTE TECNICO INSTALACIONES en TEX DIGITAL (octubre 2009 - septiembre 2011): Soporte a tecnicos de campo para la resolucion de incidencias y tareas programadas en radioenlaces, solicitud de accesos y repuestos y documentacion asociada a la incidencia. TELEOPERADORA SOPORTE TECNICO VODAFONE en COREMAIN (Octubre 2013 - 2015): Atención telefónica y soporte técnico a clientes de Vodafone particulares. TELEOPERADORA SOPORTE TÉCNICO CORPORATE en SATEC (Marzo 2015 - Diciembre 2017): Atención telefónica y soporte técnico a clientes corporativos para la resolucion de incidencias de red movil y red fija. SOPORTE TECNICO TPV en CISER (Para ABANCA) (Enero 2019 - Enero 2022): Soporte a tecnicos para la instalacion y configuracion de tpv.";
-$cvContent .= "\n\nEducación: Certificado de Profesionalidad nivel 3 en desarrollo de aplicaciones web (12.2024 - 06.2025): Desarrollo de aplicaciones web con HTML, CSS, JavaScript y PHP. Bachillerato artistico en IES Politecnico (2001-2003).";
-$cvContent .= "\n\nHabilidades: Lenguajes de Programación: JavaScript, Python, Java, Css, Php, Html. Frameworks/Librerías: React, Django, Flask, Spring Boot. Conocimientos de Redes: Cisco, Juniper, Teldat. Programas: Clarify, Abalon, Remedy, Hlr, Spirit... Bases de Datos: MySQL.";
+$cvContent = "\nSobre Mí:\n  Soy una persona proactiva, organizada y responsable, con gran capacidad de adaptación y aprendizaje. Disfruto trabajando en equipo y siempre busco superar nuevos retos.\n  Fecha de nacimiento: 17.01.1984\n  Nacionalidad: Española\n  Lugar de nacimiento: Orense\n  Originaria de: Verín\n\n  Proyectos:
+    - Miel Pura: Un proyecto web sobre la apicultura y productos de miel. (https://lidiafernandez.pythonanywhere.com/)
+    - Planes de Excursiones: Plataforma de gestión de actividades al aire libre. (https://daly2025.ct.ws/)
+    - daly2020: Un proyecto web de ejemplo. (https://daly2020.atwebpages.com/)
+    - Rehuerta: Un proyecto web sobre huertos urbanos. (https://puskas.ct.ws/)\n\n  Experiencia Laboral:\n    - Empresa X: Desarrollador Web Junior (2022-2023)\n    - Empresa Y: Asistente Administrativo (2019-2021)\n\n  Educación:\n    - Bachillerato Artístico (Politécnico de Vigo)
+    - Ciclo Superior de Secretariado
+    - Certificado de Profesionalidad Nivel 3 de Programación
+    - Curso Selección de personal (2006)
+    - Curso Secretariado (Academia Manzaneda, 2005)
+    - Curso Formador (Vidisco Sl, 2005)
+    - Curso de excelencia telefónica (Femxa, 2008)
+    - Curso empleado de oficina (Inem, 2009)
+    - Curso atención al cliente y consumidor (Inem, 2008)\n\n  Habilidades:\n    - Programación: HTML, CSS, JavaScript, PHP, Python\n    - Bases de Datos: MySQL, PostgreSQL\n    - Herramientas: Git, Docker, VS Code\n    - Idiomas: Español (nativo), Gallego (nativo), Inglés (B1), Portugués (básico), Francés (básico)\n\n  Contacto:\n    - Email: lydiafdez84@hotmail.com\n    - Teléfono: 628169139\n    - LinkedIn: [tu_perfil_linkedin]\n    - GitHub: [tu_perfil_github]";
 
 $prompt = "Basado en el siguiente contenido de CV, responde a la pregunta del usuario. Si la información no está en el CV, indícalo.\n\nCV: " . $cvContent . "\n\nPregunta del usuario: " . $userMessage;
 
