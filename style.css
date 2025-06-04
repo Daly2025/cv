@@ -354,18 +354,26 @@ form button:hover {
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    font-size: 24px;
+    font-size: 1.2em;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     transition: background-color 0.3s ease;
+    padding: 0;
 }
 
 .chat-button:hover {
-    background-color: #5a0cae;
+    background-color: #5a0da0;
+}
+
+.chat-button-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .chat-button img {
