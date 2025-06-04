@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     chatButton.addEventListener('click', () => {
         chatWindow.classList.toggle('open');
+        // Add initial welcome message when chat opens
+        if (chatWindow.classList.contains('open') && chatBody.children.length === 0) {
+            appendMessage('¡Hola! Soy el asistente personal de Lidia Fernández. Estoy aquí para responder cualquier pregunta que tengas sobre su trayectoria profesional y personalidad. ¡No dudes en preguntar!', 'ai');
+        }
     });
 
     closeChatButton.addEventListener('click', () => {
@@ -33,7 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function appendMessage(message, sender) {
         const messageElement = document.createElement('div');
         messageElement.classList.add('message', sender);
-        messageElement.innerHTML = `<p>${message}</p>`;
+
+        if (sender === 'ai') {
+            const imgElement = document.createElement('img');
+            imgElement.src = 'ChatGPT Image 4 jun 2025, 17_07_30.png'; // Ruta de la imagen de la caricatura
+            imgElement.alt = 'AI Avatar';
+            imgElement.classList.add('ai-avatar'); // Clase para estilizar la imagen
+            messageElement.appendChild(imgElement);
+        }
+
+        const textElement = document.createElement('p');
+        textElement.textContent = message;
+        messageElement.appendChild(textElement);
+
         chatBody.appendChild(messageElement);
         chatBody.scrollTop = chatBody.scrollHeight; // Scroll to bottom
     }

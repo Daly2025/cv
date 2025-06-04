@@ -368,6 +368,24 @@ form button:hover {
     background-color: #5a0cae;
 }
 
+.chat-button img {
+     width: 30px;
+     height: 30px;
+     vertical-align: middle;
+     margin-right: 5px;
+     border-radius: 50%;
+     object-fit: cover;
+ }
+
+ .ai-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
 .chat-window {
     display: none;
     position: fixed;
