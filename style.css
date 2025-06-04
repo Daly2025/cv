@@ -376,14 +376,7 @@ form button:hover {
     border-radius: 50%;
 }
 
-.chat-button img {
-     width: 30px;
-     height: 30px;
-     vertical-align: middle;
-     margin-right: 5px;
-     border-radius: 50%;
-     object-fit: cover;
- }
+
 
  .ai-avatar {
     width: 30px;
